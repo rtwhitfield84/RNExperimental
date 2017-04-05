@@ -1,12 +1,15 @@
-import React, { Component } from 'react' 
+import React, { Component } from 'react'; 
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View,
   TouchableHighlight,
+  NavigationExperimental,
   ScrollView
-} from 'react-native'
+} from 'react-native';
+
+
 class RNExperimental extends Component {
   render() {
     return (
