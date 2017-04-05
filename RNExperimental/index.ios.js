@@ -9,6 +9,12 @@ import {
   ScrollView
 } from 'react-native';
 
+const {
+  CardStack: NavigationCardStack,
+  StateUtils: NavigationStateUtils
+} = NavigationExperimental
+
+
 
 class RNExperimental extends Component {
   render() {
