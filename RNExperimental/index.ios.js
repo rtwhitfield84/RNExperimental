@@ -68,7 +68,14 @@ class RNExperimental extends Component {
   }
   if (key === 'Contact') {
     return <Contact
-             goBack={ this.handleBackAction.bind(this)} />
+             goBack={ this.handleBackAction.bind(this)}
+             onPress={this._handleAction.bind(this,
+             { type: 'push', key: 'Other' })} />
+  }
+
+  if (key === 'Other') {
+    return <Other 
+            goBack={ this.handleBackAction.bind(this)} />
   }
 }
 _renderScene(props) {
@@ -90,7 +97,7 @@ _renderScene(props) {
 }
 const Button = ({title, onPress}) => (
   <TouchableHighlight 
-    underlayColor='#EFEFEF'
+    underlayColor= '#2c3e50'
     onPress={onPress}
     style={styles.button}>
       <Text>{title}</Text>
@@ -109,12 +116,20 @@ const About = ({ onPress, goBack }) => (
    <Button onPress={goBack} title='Go Back' />
  </View>
 )
-const Contact = ({ goBack }) => (
+const Contact = ({ onPress, goBack }) => (
  <View style={styles.container}>
    <Text style={styles.title} >Hello From Contact</Text>
-   <Button title='Go Back' onPress={goBack} />
+   <Button onPress={onPress} title='Go To Next Scene' />
+   <Button onPress={goBack} title='Go Back' />
  </View>
 )
+const Other = ({ goBack }) => (
+  <View style={styles.container}>
+  <Text style={styles.title}> Other Page</Text>
+  <Button title='Go Back' onPress={goBack} />
+  </View>
+  )
+
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: '#f1c40f',
